@@ -1,17 +1,17 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import {
-  SafeAreaView,
-  // ScrollView,
-  // StatusBar,
-  // StyleSheet,
-  Text,
-  // useColorScheme,
-  // View,
-} from 'react-native';
+// import {
+//   SafeAreaView,
+//   // ScrollView,
+//   // StatusBar,
+//   // StyleSheet,
+//   Text,
+//   // useColorScheme,
+//   // View,
+// } from 'react-native';
 import { RootTabsParamList } from './src/screens';
-import Home from './src/screens/Home';
+import Home from '~screens/Home';
 import Settings from './src/screens/Settings';
 
 // import {
@@ -92,15 +92,12 @@ const RootTabs = createBottomTabNavigator<RootTabsParamList>();
 
 const App = () => {
   return (
-    <SafeAreaView>
-    <Text>This is a test</Text>
-      <NavigationContainer>
-        <RootTabs.Navigator initialRouteName="Home">
-          <RootTabs.Screen name="Home" component={Home} />
-          <RootTabs.Screen name="Settings" component={Settings} />
-        </RootTabs.Navigator>
-      </NavigationContainer>
-    </SafeAreaView>
+    <NavigationContainer>
+      <RootTabs.Navigator initialRouteName="Home">
+        <RootTabs.Screen name="Home" component={Home} />
+        <RootTabs.Screen name="Settings" component={Settings} />
+      </RootTabs.Navigator>
+    </NavigationContainer>
   );
 };
 
