@@ -192,6 +192,15 @@ type DefaultCows =
   | 'ymd_udon'
   | 'zen-noh-milk';
 
-interface cowsay {
-  (text: string, options?: { cow: any }): string;
-}
+declare type CowType = (opts: {
+  thoughts?: string;
+  eyes?: string;
+  eye?: string;
+  tongue?: string;
+}) => string;
+
+// const getTypedCows = (inputCows: typeof cows) => {
+//   return inputCows as { [K in DefaultCows]: CowType };
+// };
+
+const typedCows = cows as { [K in DefaultCows]: CowType };
